@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <img src="images/logo.svg" alt="Logo">
+        <div class="Navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT </a></li>
+                <li><a class="active" href="blog.html">BLOGS</a></li>
+                <li><a href="course.html">COURSES</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+        </div>
+    </nav>
+
+    <!-- Home -->
+
+    <section id="about-home">
+        <h2> Blog../ </h2>
+    </section>
+
+    <section id="blog-container">
+        <div class="blogs">
+            <div class="post">
+                <img src="images/b1.jpg" alt="">
+                <h3>Learn web Development In The Easiest Way</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quae numquam deserunt consectetur voluptate libero.
+                    Neque explicabo dolorum debitis praesentium placeat,
+                    magnam voluptate consequuntur at repellendus, voluptatem
+                    minus aspernatur assumenda necessitatibus.</p>
+                    <a href="post.html">Read More</a>
+            </div>
+            <div class="post">
+                <img src="images/b2.jpg" alt="">
+                <h3>Learn web Development In The Easiest Way</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quae numquam deserunt consectetur voluptate libero.
+                    Neque explicabo dolorum debitis praesentium placeat,
+                    magnam voluptate consequuntur at repellendus, voluptatem
+                    minus aspernatur assumenda necessitatibus.</p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="post">
+                <img src="images/b3.jpg" alt="">
+                <h3>Learn web Development In The Easiest Way</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quae numquam deserunt consectetur voluptate libero.
+                    Neque explicabo dolorum debitis praesentium placeat,
+                    magnam voluptate consequuntur at repellendus, voluptatem
+                    minus aspernatur assumenda necessitatibus.</p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="post">
+                <img src="images/b4.png" alt="">
+                <h3>Learn web Development In The Easiest Way</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quae numquam deserunt consectetur voluptate libero.
+                    Neque explicabo dolorum debitis praesentium placeat,
+                    magnam voluptate consequuntur at repellendus, voluptatem
+                    minus aspernatur assumenda necessitatibus.</p>
+                    <a href="#">Read More</a>
+            </div>
+        </div>
+
+    <div class="cate">
+        <h2>Categories</h2>
+        <hr>
+        <a href="#">Web Development</a>
+        <hr>
+        <a href="#">Web Design</a>
+        <hr>
+        <a href="#">App Development</a>
+        <hr>
+        <a href="#">Frontend Web</a>
+        <hr>
+        <a href="#"> Python Programing</a>
+        <hr>
+        <a href="#"> JaveScript Hack </a>
+        <hr>
+    </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3> Quick Links</h3>
+            <li> Jobs</li>
+            <li> Brand Assets</li>
+            <li>Investor relations</li>
+            <li>Terms of Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Guides</h3>
+            <li> Reseach</li>
+            <li> Experts</li>
+            <li> Managed Website</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="submit">
+                <input type="text" placeholder="Your Email address">
+                <a href="#" class="yellow">Submit</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copys2021 All rights reserved | This Website is made by <U>MAHESH SINGH & ADITYA .....</U> </p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        $('#menu-btn').click(function () {
+            $('nav .Navigation ul').addClass('active')
+        });
+        $('#menu-close').click(function () {
+            $('nav .Navigation ul').removeClass('active')
+        });
+    </script>
+
+</body>
+
+</html>
