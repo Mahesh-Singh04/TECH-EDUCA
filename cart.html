@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav>
+        <img src="images/logo.svg" alt="Logo">
+        <div class="Navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT </a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="course.html">COURSES</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i><span
+                            id="cart-count">0</span></a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+        </div>
+    </nav>
+
+
+    <h2 id="cartTitle">Your Cart</h2>
+    <table id="cartTable">
+        <tr>
+            <th>Course Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </table>
+    <div id="cartSummary">
+        <h3>Cart Summary</h3>
+        <p>Subtotal: $<span id="subtotal">0.00</span></p>
+        <p>Tax (5%): $<span id="tax">0.00</span></p>
+        <p>Total: $<span id="total">0.00</span></p>
+    </div>
+
+    <!-- Payment Form -->
+    <div id="paymentForm">
+        <h3>Payment Details</h3>
+        <form action="/submit-payment" method="POST">
+            <div class="form-group">
+                <label for="cardholderName">Cardholder Name</label>
+                <input type="text" id="cardholderName" name="cardholderName" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+            <div class="form-group">
+                <label for="billingAddress">Billing Address</label>
+                <input type="text" id="billingAddress" name="billingAddress" required>
+            </div>
+            <button type="submit">Pay Now</button>
+    </div>
+    </form>
+
+
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3> Quick Links</h3>
+            <li> Jobs</li>
+            <li> Brand Assets</li>
+            <li>Investor relations</li>
+            <li>Terms of Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Guides</h3>
+            <li> Reseach</li>
+            <li> Experts</li>
+            <li> Managed Website</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="submit">
+                <input type="text" placeholder="Your Email address">
+                <a href="#" class="yellow">Submit</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy2021 All rights reserved | This Website is made by <U>MAHESH SINGH & ADITYA .....</U> </p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        $('#menu-btn').click(function () {
+            $('nav .Navigation ul').addClass('active');
+        });
+        $('#menu-close').click(function () {
+            $('nav .Navigation ul').removeClass('active');
+        });
+
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let cartTable = document.getElementById('cartTable');
+        let subtotalElement = document.getElementById('subtotal');
+        let taxElement = document.getElementById('tax');
+        let totalElement = document.getElementById('total');
+        let cartIconCountElement = document.getElementById('cart-count');
+
+        // Function to update the cart display
+        function updateCart() {
+            cartTable.innerHTML = `
+        <tr>
+            <th>Course Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    `;
+            let subtotal = 0;
+
+            cartItems.forEach((item, index) => {
+                let total = item.price * item.quantity;
+                subtotal += total;
+
+                cartTable.innerHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>$${item.price}</td>
+                <td>
+                    <button class="decrement-btn" data-index="${index}">-</button>
+                    ${item.quantity}
+                    <button class="increment-btn" data-index="${index}">+</button>
+                </td>
+                <td>$${total.toFixed(2)}</td>
+                <td><button class="remove-item" data-index="${index}">Remove</button></td>
+            </tr>
+        `;
+            });
+
+            const taxRate = 0.05;  // 5% tax
+            let tax = subtotal * taxRate;
+            let total = subtotal + tax;
+
+            subtotalElement.innerText = subtotal.toFixed(2);
+            taxElement.innerText = tax.toFixed(2);
+            totalElement.innerText = total.toFixed(2);
+
+            updateCartIcon();
+        }
+
+        // Function to update cart icon count
+        function updateCartIcon() {
+            const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+            cartIconCountElement.innerText = cartCount;
+        }
+
+        // Event listeners for increment and decrement buttons
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('increment-btn')) {
+                let index = event.target.getAttribute('data-index');
+                cartItems[index].quantity++;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCart();
+            }
+
+            if (event.target.classList.contains('decrement-btn')) {
+                let index = event.target.getAttribute('data-index');
+                if (cartItems[index].quantity > 1) {
+                    cartItems[index].quantity--;
+                } else {
+                    cartItems.splice(index, 1);
+                }
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCart();
+            }
+
+            if (event.target.classList.contains('remove-item')) {
+                let index = event.target.getAttribute('data-index');
+                cartItems.splice(index, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCart();
+            }
+        });
+
+        // Initial cart display
+        updateCart();
+
+        // Payment request API
+
+
+
+    </script>
+
+</body>
+
+</html>

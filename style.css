@@ -175,7 +175,7 @@ nav .Navigation ul li a:hover {
   transition: 0.5s ease;
 }
 
-#features .fea-box:hover{
+#features .fea-box:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px 0 rgba(34, 40, 123, 0.37);
 }
@@ -299,6 +299,7 @@ nav .Navigation ul li a:hover {
   font-size: 1.1rem;
   font-weight: 600;
 }
+
 #registration .form {
   background: #fff;
   border-radius: 8px;
@@ -309,7 +310,7 @@ nav .Navigation ul li a:hover {
   transition: 0.5s ease;
 }
 
-#registration .form:hover{
+#registration .form:hover {
   transform: scale(1.02);
 }
 
@@ -382,7 +383,7 @@ nav .Navigation ul li a:hover {
 
 #experts .expert-box .profile:hover {
   transform: scale(1.05);
-  box-shadow: 2px 3px 10px  rgba(45, 59, 96, 0.95);
+  box-shadow: 2px 3px 10px rgba(45, 59, 96, 0.95);
   cursor: pointer;
 }
 
@@ -593,7 +594,8 @@ footer .copyright p {
   height: auto;
   transition: 0.5s ease;
 }
-#trust .trust-img img:hover{
+
+#trust .trust-img img:hover {
   transform: scale(1.05);
 }
 
@@ -816,12 +818,12 @@ footer .copyright p {
   align-items: flex-start;
 }
 
-#contact  .getin{
+#contact .getin {
   width: 350x;
   margin-right: 20px;
 }
 
-#contact  .getin h2{
+#contact .getin h2 {
   color: #2c234d;
   font-size: 30px;
   font-weight: 800;
@@ -829,15 +831,15 @@ footer .copyright p {
   margin-bottom: 16px;
 }
 
-#contact  .getin p{
+#contact .getin p {
   color: #686875;
   line-height: 24px;
   margin-bottom: 33px;
   padding-bottom: 25px;
-  border-bottom: 1px  solid #e5e4ed;
+  border-bottom: 1px solid #e5e4ed;
 }
 
-#contact  .getin h3{
+#contact .getin h3 {
   color: #2c234d;
   font-size: 16px;
   font-weight: 600;
@@ -845,43 +847,43 @@ footer .copyright p {
   margin-bottom: 15x;
 }
 
-#contact  .getin .getin-details div{
+#contact .getin .getin-details div {
   display: flex;
 }
 
-#contact  .getin .getin-details div .get{
+#contact .getin .getin-details div .get {
   font-size: 16px;
   line-height: 22px;
   color: #5838fc;
   margin-right: 20px;
 }
 
-#contact  .getin .getin-details div p{
+#contact .getin .getin-details div p {
   font-size: 14px;
   border-bottom: none;
   line-height: 22px;
   margin-bottom: 15px;
 }
 
-#contact  .getin .getin-details .pro-links i{
+#contact .getin .getin-details .pro-links i {
   margin-right: 8px;
 }
 
-#contact .form{
+#contact .form {
   width: 60%;
   background: #f7f6fa;
   padding: 40px;
   border-radius: 10px;
 }
 
-#contact .form h4{
+#contact .form h4 {
   font-size: 24px;
   color: #2c234d;
   line-height: 30px;
   margin-bottom: 8px;
 }
 
-#contact .form p{
+#contact .form p {
   color: #686875;
   line-height: 24px;
   padding-bottom: 25px;
@@ -893,7 +895,7 @@ footer .copyright p {
   width: 100%;
 }
 
-#contact .form .form-row input{
+#contact .form .form-row input {
   width: 48%;
   font-size: 14px;
   font-weight: 400;
@@ -920,7 +922,7 @@ footer .copyright p {
   margin-bottom: 20px;
 }
 
-#contact .form button{
+#contact .form button {
   font-size: .9rem;
   padding: 13px 25px;
   background: rgb(21, 21, 100);
@@ -933,16 +935,128 @@ footer .copyright p {
 
 }
 
-#map{
+#map {
   width: 100%;
   height: 70vh;
   margin-bottom: 8vw;
 }
 
-#map iframe{
+#map iframe {
   width: 100%;
   height: 100%;
 }
+
+/* Cart Table Styles */
+#cartTitle {
+  padding-top: 120px;
+  /* Adjust based on your navbar height */
+  text-align: center;
+}
+
+#cartTable {
+  width: 80%;
+  margin: 20px auto;
+  /* Adjust margin-top based on your navbar height */
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cartTable th,
+#cartTable td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#cartTable th {
+  background-color: #0071e3;
+  color: white;
+}
+
+#cartTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Cart Summary Styles */
+
+#cartSummary {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cartSummary h3 {
+  margin: 0 0 10px 0;
+}
+
+#cartSummary p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.add-to-cart {
+  padding: 4px;
+  margin: 8px;
+  border-radius: 6px;
+  background-color: #4A4A88;
+  color: white;
+}
+
+.increment-btn,
+.decrement-btn {
+  padding: 10px 15px;
+  /* Adds 10px top/bottom, 15px left/right */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  /* Optional: Rounded corners */
+}
+
+/* Payment Form */
+
+#paymentForm {
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  max-width: 80%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+
 
 /* --------------------Responsiveness----------------- */
 
@@ -1087,13 +1201,39 @@ footer .copyright p {
 
   /* Contact */
 
-  #contact{
+  #contact {
     padding: 8vw 4vw;
   }
 
   #contact .getin {
     width: 250px;
   }
+
+  #cartTable,
+  #cartSummary {
+    width: 90%;
+  }
+
+  /* Base styles for the table */
+  #cartTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #cartTable th,
+  #cartTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  /* Responsive styles for tablets */
+  #cartTable {
+    font-size: 0.9em;
+    /* Slightly smaller font for tablets */
+  }
+
+
 }
 
 /* responsive for mobiles*/
@@ -1173,39 +1313,85 @@ footer .copyright p {
     width: 50;
   }
 
-   #course-inner .overview .course-head .c-name h2 {
+  #course-inner .overview .course-head .c-name h2 {
     font-size: 22px;
   }
+
   #course-inner .overview .course-head span {
     font-size: 22px;
   }
-  #course-runner .enroll{
-    width:100%;
+
+  #course-runner .enroll {
+    width: 100%;
   }
-/* Contact */
-#contact {
-  padding: 8vw 4vw;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: flex-start;
-}
-#contact .getin {
-  width: 100%;
-  margin-bottom: 30px;
-}
-#contact .form {
-  width: 100%;
-  padding: 40px 30px;
-}
-#contact .form .form-row{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-}
-#contact .form .form-row input{
-  width: 100%;
-}
+
+  /* Contact */
+  #contact {
+    padding: 8vw 4vw;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  #contact .getin {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #contact .form {
+    width: 100%;
+    padding: 40px 30px;
+  }
+
+  #contact .form .form-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  #contact .form .form-row input {
+    width: 100%;
+  }
+
+  /* Responsive styles for mobile devices */
+
+  #cartTable,
+  #cartTable thead,
+  #cartTable tbody,
+  #cartTable th,
+  #cartTable td,
+  #cartTable tr {
+    display: block;
+    width: 100%;
+  }
+
+  #cartTable tr {
+    margin-bottom: 15px;
+  }
+
+  #cartTable th {
+    display: none;
+    /* Hide headers on mobile */
+  }
+
+  #cartTable td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    /* Space for pseudo-element */
+  }
+
+  #cartTable td::before {
+    content: attr(data-label);
+    /* Show labels before data */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 376px) {
