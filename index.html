@@ -28,7 +28,6 @@
                 <li><a href="blog.html">BLOGS</a></li>
                 <li><a href="course.html">COURSES</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
-                <li><a href="signin/up.html">SIGN UP/IN</a></li>
                 <li><a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
 
             </ul>
@@ -216,12 +215,13 @@
 
         <div class="form">
             <h3>Create Free Account Now!</h3>
-            <input type="text" placeholder="Name" name="" id="">
-            <input type="text" placeholder="Email Address" name="" id="">
-            <input type="text" placeholder="Phone Number" name="" id="">
+            <input type="text" placeholder="Name" id="name" required>
+            <input type="email" placeholder="Email Address" id="email" required>
+            <input type="tel" placeholder="Phone Number" id="phone" required>
             <div class="btn">
-                <a href="#" class="yellow">Submit Form</a>
+                <button id="submit" class="yellow">Submit Form</button>
             </div>
+            <div id="message"></div> <!-- For displaying messages -->
         </div>
     </section>
 
@@ -326,15 +326,7 @@
         </div>
 
     </footer>
-
-    <script>
-        $('#menu-btn').click(function () {
-            $('nav .Navigation ul').addClass('active')
-        });
-        $('#menu-close').click(function () {
-            $('nav .Navigation ul').removeClass('active')
-        });
-    </script>
+<script src="script.js"></script>
 
 </body>
 
