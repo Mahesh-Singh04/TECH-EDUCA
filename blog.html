@@ -19,7 +19,7 @@
 
     <!-- Navigation -->
     <nav>
-        <img src="images/logo.svg" alt="Logo">
+        <a href="index.html"> <img src="images/logo.svg" alt="Logo"></a> 
         <div class="Navigation">
             <ul>
                 <i id="menu-close" class="fas fa-times"></i>
@@ -155,7 +155,14 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        $('#menu-btn').click(function () {
+    $('nav .Navigation ul').addClass('active');
+});
+$('#menu-close').click(function () {
+    $('nav .Navigation ul').removeClass('active');
+});
+    </script>
 
 </body>
 

@@ -13,13 +13,14 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="contact.js"></script>
 </head>
 
 <body>
 
     <!-- Navigation -->
     <nav>
-        <img src="images/logo.svg" alt="Logo">
+        <a href="index.html"> <img src="images/logo.svg" alt="Logo"></a> 
         <div class="Navigation">
             <ul>
                 <i id="menu-close" class="fas fa-times"></i>
@@ -72,23 +73,30 @@
             </div>
         </div>
 
-         <div class="form">
+        <div class="form">
             <h4>Let's Connect</h4>
             <p>Integer at learn Lorem ipsum dolor sit.</p>
             <div class="form-row">
-                <input type="text" placeholder="Your Name">
-                <input type="text" placeholder="Email">
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="text" id="email" placeholder="Email">
             </div>
             <div class="form-col">
-                <input type="text" placeholder="Subject">
+                <input type="text" id="subject" placeholder="Subject">
             </div>
             <div class="form-col">
-                <textarea name="" id="" cols="30" rows="8" placeholder="How can we help you?"></textarea>
+                <textarea id="message" cols="30" rows="8" placeholder="How can we help you?"></textarea>
             </div>
             <div class="form-col">
-                <button>Send Message</button>
+                <button onclick="validateForm()">Send Message</button>
             </div>
         </div>
+        <div id="alertBox" class="alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
+        
+
+    
     </section> 
 
     <!-- map -->
@@ -151,7 +159,16 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+    $('#menu-btn').click(function () {
+        $('nav .Navigation ul').addClass('active');
+    });
+    $('#menu-close').click(function () {
+        $('nav .Navigation ul').removeClass('active');
+    });
+
+    </script>
 
 </body>
 

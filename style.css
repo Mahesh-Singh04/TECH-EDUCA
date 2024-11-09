@@ -1056,6 +1056,37 @@ button[type="submit"]:hover {
   background-color: #218838;
 }
 
+/* Alert-box */
+.alert-box {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #f44336; /* Alert background color */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it is on top of other content */
+}
+
+.alert-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.alert-box button:hover {
+  background-color: #333;
+}
+
 
 
 /* --------------------Responsiveness----------------- */

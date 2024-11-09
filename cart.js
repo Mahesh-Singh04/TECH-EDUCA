@@ -91,3 +91,25 @@ document.addEventListener('click', function (event) {
 
 // Initial cart display
 updateCart();
+
+
+// Payment section
+
+function processPayment() {
+    // Get values from input fields
+    var cardNumber = document.getElementById('cardNumber').value;
+    var expiryDate = document.getElementById('expiryDate').value;
+    var cvv = document.getElementById('cvv').value;
+
+    // Basic validation check
+    if (!cardNumber || !expiryDate || !cvv) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Simulating payment processing (for demonstration purposes)
+    alert("Payment successful! Thank you for your purchase.");
+
+    // Clear form after successful payment
+    document.getElementById('paymentForm').reset();
+}
