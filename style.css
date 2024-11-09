@@ -1065,7 +1065,7 @@ button[type="submit"]:hover {
   transform: translate(-50%, -50%);
   width: 300px;
   padding: 20px;
-  background-color: #f44336; /* Alert background color */
+  background-color: #218838; /* Alert background color */
   color: white;
   text-align: center;
   border-radius: 8px;
