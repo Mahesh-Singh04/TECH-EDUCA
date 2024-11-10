@@ -18,8 +18,6 @@ function updateCart() {
 <tr>
     <th>Course Name</th>
     <th>Price</th>
-    <th>Quantity</th>
-    <th>Total</th>
     <th>Action</th>
 </tr>
 `;
@@ -33,12 +31,6 @@ function updateCart() {
     <tr>
         <td>${item.name}</td>
         <td>$${item.price}</td>
-        <td>
-            <button class="decrement-btn" data-index="${index}">-</button>
-            ${item.quantity}
-            <button class="increment-btn" data-index="${index}">+</button>
-        </td>
-        <td>$${total.toFixed(2)}</td>
         <td><button class="remove-item" data-index="${index}">Remove</button></td>
     </tr>
 `;
@@ -63,24 +55,6 @@ function updateCartIcon() {
 
 // Event listeners for increment and decrement buttons
 document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('increment-btn')) {
-        let index = event.target.getAttribute('data-index');
-        cartItems[index].quantity++;
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        updateCart();
-    }
-
-    if (event.target.classList.contains('decrement-btn')) {
-        let index = event.target.getAttribute('data-index');
-        if (cartItems[index].quantity > 1) {
-            cartItems[index].quantity--;
-        } else {
-            cartItems.splice(index, 1);
-        }
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        updateCart();
-    }
-
     if (event.target.classList.contains('remove-item')) {
         let index = event.target.getAttribute('data-index');
         cartItems.splice(index, 1);
