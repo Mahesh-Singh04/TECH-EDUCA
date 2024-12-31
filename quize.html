@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Page</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html"> <img src="images/logo.svg" alt="Logo"></a>
+        <div class="Navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT </a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a class="active" href="quize.html">QUIZE</a></li>
+                <li><a href="course.html">COURSES</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Web Development Quiz</h1>
+        <div id="quiz-container"></div>
+        <button id="submit-btn">Submit</button>
+    </div>
+    <div id="result-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Results</h2>
+            <p id="result-text"></p>
+            <button id="retry-btn">Retry</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3> Quick Links</h3>
+            <li> Jobs</li>
+            <li> Brand Assets</li>
+            <li>Investor relations</li>
+            <li>Terms of Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Repitation</li>
+            <li> Power Tools</li>
+            <li>Manage Website</li>
+            <li>Marketing Services</li>
+        </div>
+        <div class="footer-col">
+            <h3>Guides</h3>
+            <li> Reseach</li>
+            <li> Experts</li>
+            <li> Managed Website</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="submit">
+                <input type="text" placeholder="Your Email address">
+                <a href="#" class="yellow">Submit</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy2021 All rights reserved | This Website is made by <U>MAHESH SINGH & ADITYA .....</U> </p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+    <script>
+            // Navigation toggle
+$('#menu-btn').click(function () {
+    $('nav .Navigation ul').addClass('active')
+});
+$('#menu-close').click(function () {
+    $('nav .Navigation ul').removeClass('active')
+}); 
+
+        const quizData = [
+    {
+        question: "What does HTML stand for?",
+        options: ["High Text Markup Language", "Hyper Text Markup Language", "Hyper Tabular Markup Language", "Hyper Text Markup Link"],
+        answer: "Hyper Text Markup Language"
+    },
+    {
+        question: "What does CSS stand for?",
+        options: ["Colorful Style Sheets", "Computer Style Sheets", "Cascading Style Sheets", "Cascading Style Scripts"],
+        answer: "Cascading Style Sheets"
+    },
+    {
+        question: "Which of the following is a valid way to declare a variable in JavaScript?",
+        options: ["let myVar;", "var myVar;", "const myVar;", "All of the above"],
+        answer: "All of the above"
+    },
+    {
+        question: "Which HTML attribute is used to define inline styles?",
+        options: ["font", "style", "class", "styles"],
+        answer: "style"
+    },
+    {
+        question: "Which of the following is a JavaScript framework?",
+        options: ["React", "Laravel", "Django", "Ruby on Rails"],
+        answer: "React"
+    },
+    {
+        question: "What is the purpose of the <head> tag in HTML?",
+        options: ["To display the main content", "To contain metadata", "To create a footer", "To define the title"],
+        answer: "To contain metadata"
+    },
+    {
+        question: "What is the correct way to comment in JavaScript?",
+        options: ["// This is a comment", "<!-.- This is a comment -->", "/* This is a comment */", "## This is a comment"],
+        answer: "// This is a comment"
+    },
+    {
+        question: "What does the 'this' keyword refer to in JavaScript?",
+        options: ["The global object", "The previous object", "The parent object", "The current object"],
+        answer: "The current object"
+    },
+    {
+        question: "Which of the following is NOT a JavaScript data type?",
+        options: ["Undefined", "Boolean", "Character", "String"],
+        answer: "Character"
+    },
+    {
+        question: "Which of the following is a JavaScript method to convert a string to a number?",
+        options: ["parseInt()", "toString()", "Number()", "Both A and C"],
+        answer: "Both A and C"
+    },
+    {
+        question: "Which of the following is a valid CSS selector?",
+        options: [".class", "#id", "element", "all"],
+        answer: "all"
+    },
+    {
+        question: "What is the purpose of the z-index in CSS?",
+        options: ["To set the size of an element", "To control the stacking order of elements", "To change the color of an element", "To define the position of an element"],
+        answer: "To control the stacking order of elements"
+    },
+    {
+        question: "What does the display: none; CSS property do?",
+        options: ["Hides the element but keeps its space", "Hides the element and removes its space", "Shows the element", "Makes the element invisible but still clickable"],
+        answer: "Hides the element and removes its space"
+    },
+    {
+        question: "What is the default value of the position property in CSS?",
+        options: ["static", "relative", "absolute", "fixed"],
+        answer: "static"
+    },
+    {
+        question: "Which of the following is a method to select an element in JavaScript?",
+        options: ["getElementById()", "getElementsByClassName()", "All of the above", "querySelector()"],
+        answer: "All of the above"
+    },
+    {
+        question: "What does JSON stand for?",
+        options: ["JavaScript Online Notation", "Java Standard Object Notation", "JavaScript Object Notation", "JavaScript Object Notation Format"],
+        answer: "JavaScript Object Notation"
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+const submitBtn = document.getElementById('submit-btn');
+const resultPopup = document.getElementById('result-popup');
+const resultText = document.getElementById('result-text');
+const closeBtn = document.querySelector('.close-btn');
+const retryBtn = document.getElementById('retry-btn');
+
+function loadQuiz() {
+    quizData.forEach((item, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question');
+        questionElement.innerHTML = `
+            <h3>${index + 1}. ${item.question}</h3>
+            <ul class="options">
+                ${item.options.map((option, i) => `
+                    <li onclick="selectOption(this, '${item.answer}')">
+                        ${i + 1}. ${option}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        quizContainer.appendChild(questionElement);
+    });
+}
+
+function selectOption(selectedLi, correctAnswer) {
+    const options = selectedLi.parentElement.children;
+    for (let option of options) {
+        option.classList.remove('correct', 'incorrect');
+        option.onclick = null; // Disable further clicks
+    }
+    selectedLi.classList.add(selectedLi.innerText.includes(correctAnswer) ? 'correct' : 'incorrect');
+}
+
+function calculateScore() {
+    let score = 0;
+    quizData.forEach((item, index) => {
+        const selectedOption = document.querySelector(`.question:nth-child(${index + 1}) .options .correct`);
+        if (selectedOption) {
+            score++;
+        }
+    });
+    return score;
+}
+
+function getPerformanceMessage(score) {
+    if (score < 6) {
+        return "Weak performance. Keep practicing to improve your skills.";
+    } else if (score >= 7 && score <= 11) {
+        return "Good job! You have a solid understanding, but there's room for improvement.";
+    } else {
+        return "Excellent work! You have a strong grasp of web development concepts.";
+    }
+}
+
+submitBtn.addEventListener('click', () => {
+    const score = calculateScore();
+    const performanceMessage = getPerformanceMessage(score);
+    resultText.innerHTML = `You scored ${score} out of ${quizData.length}. ${performanceMessage}`;
+    resultPopup.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+    resultPopup.classList.add('hidden');
+    resetQuiz();
+});
+
+retryBtn.addEventListener('click', () => {
+    resultPopup.classList.add('hidden');
+    resetQuiz();
+});
+
+function resetQuiz() {
+    document.querySelectorAll('.question .options li').forEach(li => {
+        li.classList.remove('correct', 'incorrect');
+        li.onclick = function() { selectOption(this, li.dataset.answer); }; // Re-enable click
+    });
+}
+
+loadQuiz();
+    </script>
+</body>
+
+</html>
